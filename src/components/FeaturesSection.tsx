@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {
   Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield,
 } from "lucide-react";
+import Link from "next/link";
 import { FEATURES } from "@/lib/constants";
 
 const iconMap = {
@@ -12,7 +13,7 @@ const iconMap = {
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative py-24 lg:py-32">
+    <section id="features" className="relative py-12 lg:py-14">
       {/* Subtle mesh gradient */}
       <div className="absolute inset-0 mesh-gradient" />
 
@@ -22,18 +23,21 @@ export default function FeaturesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center lg:mb-12 mb-10"
         >
           <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             Why UK Viewers Choose Us
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What You Get When You{" "}
-            <span className="gradient-text">Buy IPTV From Us</span>
+            The Complete Feature Set Included With Every{" "}
+            <span className="gradient-text">Buy IPTV UK Subscription</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            Every purchase unlocks the complete package from day one. Here is exactly
-            what lands in your inbox the moment you pay.
+            Every{" "}
+            <Link href="/pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              IPTV subscription
+            </Link>{" "}
+            unlocks the complete package from day one — login credentials and setup guide land in the inbox the moment payment is confirmed.
           </p>
         </motion.div>
 

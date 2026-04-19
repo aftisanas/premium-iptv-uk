@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Tv, Trophy, Film, Baby, Newspaper, Globe } from "lucide-react";
+import Link from "next/link";
 import { CHANNEL_CATEGORIES } from "@/lib/constants";
 
 const iconMap = { Tv, Trophy, Film, Baby, Newspaper, Globe } as const;
 
 export default function ChannelsSection() {
   return (
-    <section id="channels" className="relative py-24 lg:py-32">
+    <section id="channels" className="relative py-11 lg:py-16">
       <div className="absolute inset-0 mesh-gradient" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,12 +23,15 @@ export default function ChannelsSection() {
             UK Channels That Matter
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Buy IPTV UK And Unlock{" "}
-            <span className="gradient-text">37,000 Channels In Six Categories</span>
+            Buy IPTV UK &mdash; Instant Access to{" "}
+            <span className="gradient-text">37,000 Channels Across Six Categories</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            Pick your plan and every category below opens at once. No add-ons, no bolt-ons,
-            no hidden fees.
+            A single{" "}
+            <Link href="/pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              IPTV UK plan
+            </Link>{" "}
+            opens every category below at once — no add-ons, no bolt-ons, no hidden fees.
           </p>
         </motion.div>
 

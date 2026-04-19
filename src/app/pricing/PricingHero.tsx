@@ -81,11 +81,11 @@ export default function PricingHero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto max-w-2xl text-lg text-gray-300/90 leading-relaxed"
         >
-          Every plan gives you the same complete experience:{" "}
+          Every IPTV UK subscription plan delivers the same complete experience:{" "}
           <strong className="text-white font-semibold">37,000+ live channels</strong>,{" "}
           <strong className="text-white font-semibold">198,000+ films and series</strong> on demand,
           full EPG, 7-day catch-up, and streaming in up to 4K quality.
-          No contracts. No hidden fees. Cancel at any time.
+          No contracts. No hidden fees. Cancellation available at any time.
         </motion.p>
       </div>
 

@@ -49,7 +49,7 @@ function AnimatedNumber({ value }: { value: string }) {
 
 export default function StatsBar() {
   return (
-    <section className="relative py-16 lg:py-20 bg-[#fafbff]">
+    <section className="relative lg:py-16 py-11 bg-[#fafbff]">
       {/* Subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-violet-50/50 via-white to-cyan-50/30" />
       <div className="absolute inset-0 border-y border-violet-100/50" />

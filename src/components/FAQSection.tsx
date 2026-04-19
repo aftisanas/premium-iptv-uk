@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 import { FAQ_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative py-24 lg:py-32">
+    <section id="faq" className="relative py-11 lg:py-16">
       <div className="absolute inset-0 mesh-gradient" />
 
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -24,11 +25,15 @@ export default function FAQSection() {
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Buy IPTV UK —{" "}
-            <span className="gradient-text">Frequently Asked Questions</span>
+            Buy IPTV UK FAQ &mdash; Common{" "}
+            <span className="gradient-text">Questions, Answered</span>
           </h2>
           <p className="text-lg text-muted">
-            Everything you need to know before you buy IPTV in the UK.
+            Essential information to review before{" "}
+            <Link href="/pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              buying IPTV
+            </Link>{" "}
+            in the UK.
           </p>
         </motion.div>
 

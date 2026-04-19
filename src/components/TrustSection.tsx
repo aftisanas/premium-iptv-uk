@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Shield, Wifi, Lock, ServerCog } from "lucide-react";
+import Link from "next/link";
 
 const trustItems = [
   {
@@ -28,7 +29,7 @@ const trustItems = [
 
 export default function TrustSection() {
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative py-11 lg:py-16">
       <div className="absolute inset-0 section-gradient-2" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -42,11 +43,15 @@ export default function TrustSection() {
             Trust & Guarantee
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Buy IPTV With Complete{" "}
-            <span className="gradient-text">Buyer Confidence</span>
+            Buy IPTV With Confidence &mdash; Backed by{" "}
+            <span className="gradient-text">Four Hard Guarantees</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
-            We back every order with four hard guarantees. If any one of them fails, your money comes back the same day.
+            Every order is backed by four hard guarantees — if any one fails, a full{" "}
+            <Link href="/refund" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              same-day refund
+            </Link>{" "}
+            is issued.
           </p>
         </motion.div>
 

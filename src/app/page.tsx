@@ -32,12 +32,12 @@ export default function HomePage() {
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://iptv-premium-uk.tv/#organization",
-                name: "Premium IPTV",
-                url: "https://iptv-premium-uk.tv",
+                "@id": "https://buy-iptv-uk.com/#organization",
+                name: "Buy IPTV UK | IPTV Subscription With 37,000 Channels in 4K From £4.99",
+                url: "https://buy-iptv-uk.com",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://iptv-premium-uk.tv/logo.png",
+                  url: "https://buy-iptv-uk.com/logo.png",
                 },
                 contactPoint: {
                   "@type": "ContactPoint",
@@ -48,34 +48,34 @@ export default function HomePage() {
               },
               {
                 "@type": "WebSite",
-                "@id": "https://iptv-premium-uk.tv/#website",
-                name: "Premium IPTV",
-                url: "https://iptv-premium-uk.tv",
+                "@id": "https://buy-iptv-uk.com/#website",
+                name: "Buy IPTV UK | IPTV Subscription With 37,000 Channels in 4K From £4.99",
+                url: "https://buy-iptv-uk.com",
                 inLanguage: "en-GB",
                 publisher: {
-                  "@id": "https://iptv-premium-uk.tv/#organization",
+                  "@id": "https://buy-iptv-uk.com/#organization",
                 },
                 potentialAction: {
                   "@type": "SearchAction",
                   target:
-                    "https://iptv-premium-uk.tv/?s={search_term_string}",
+                    "https://buy-iptv-uk.com/?s={search_term_string}",
                   "query-input": "required name=search_term_string",
                 },
               },
               {
                 "@type": "WebPage",
-                "@id": "https://iptv-premium-uk.tv/#webpage",
-                url: "https://iptv-premium-uk.tv",
-                name: "Buy IPTV UK | 37,000 Channels in 4K From £25.99",
+                "@id": "https://buy-iptv-uk.com/#webpage",
+                url: "https://buy-iptv-uk.com",
+                name: "Buy IPTV UK | IPTV Subscription With 37,000 Channels in 4K From £4.99",
                 inLanguage: "en-GB",
                 isPartOf: {
-                  "@id": "https://iptv-premium-uk.tv/#website",
+                  "@id": "https://buy-iptv-uk.com/#website",
                 },
                 about: {
-                  "@id": "https://iptv-premium-uk.tv/#organization",
+                  "@id": "https://buy-iptv-uk.com/#organization",
                 },
                 description:
-                  "Buy IPTV in the UK and get 37,000 channels, 4K UHD, built-in VPN and instant setup. From £25.99 with a 30-day money-back guarantee.",
+                  "Buy IPTV in the UK and get 37,000 channels, 4K UHD, built-in VPN and instant setup. From £4.99 with a 30-day money-back guarantee.",
               },
             ],
           }),
@@ -87,10 +87,10 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: "Premium IPTV Subscription",
+            name: "Buy IPTV UK Subscription",
             description:
-              "Premium UK IPTV subscription with 37,000+ live channels and 198,000+ VOD titles in HD & 4K quality.",
-            brand: { "@type": "Brand", name: "Premium IPTV" },
+              "Buy IPTV UK subscription with 37,000+ live channels and 198,000+ VOD titles in HD & 4K quality.",
+            brand: { "@type": "Brand", name: "Buy IPTV UK" },
             offers: [
               {
                 "@type": "Offer",

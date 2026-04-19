@@ -141,7 +141,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
               Ready to Start Streaming?
             </h3>
             <p className="text-muted mb-6">
-              Get started with Premium IPTV today. Plans from £25.99 with a 30-day money-back guarantee.
+              Get started with Premium IPTV today. Plans from £4.99 with a 30-day money-back guarantee.
             </p>
             <a
               href={`${WHATSAPP_BASE_URL}?text=${encodeURIComponent("Hello Premium IPTV, I just read your blog and would like to subscribe!")}`}

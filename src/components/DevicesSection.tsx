@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Tv, Smartphone, Monitor, Flame, Box, Airplay } from "lucide-react";
+import Link from "next/link";
 import { DEVICES } from "@/lib/constants";
 
 const iconMap = { Tv, Smartphone, Monitor, Flame, Box, Airplay } as const;
 
 export default function DevicesSection() {
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative py-11 lg:py-16">
       <div className="absolute inset-0 section-gradient-2" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,12 +23,15 @@ export default function DevicesSection() {
             Multi-Device Access
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Buy IPTV And Watch On{" "}
-            <span className="gradient-text">Every Screen You Own</span>
+            Buy IPTV Once &mdash; Watch Across{" "}
+            <span className="gradient-text">Every Household Screen</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
-            One purchase, one login, five screens. Our IPTV service runs on every device
-            in the house with no extra hardware to buy.
+            One{" "}
+            <Link href="/pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              IPTV purchase
+            </Link>
+            , one login, five screens — the IPTV service runs on every device in the household with no extra hardware required.
           </p>
         </motion.div>
 

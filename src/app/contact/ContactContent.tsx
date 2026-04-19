@@ -113,8 +113,7 @@ export default function ContactContent() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto max-w-2xl text-lg text-gray-300/90 leading-relaxed"
           >
-            Our support team understands the UK market and is available 24/7
-            via live chat, email, and WhatsApp. Real people who speak your language.
+            The UK-based Buy IPTV UK support team is available 24/7 via live chat, email, and WhatsApp — real people with deep knowledge of the UK market.
           </motion.p>
         </div>
 

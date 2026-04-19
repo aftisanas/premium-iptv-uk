@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="testimonials" className="relative py-11 lg:py-16 overflow-hidden">
       <div className="absolute inset-0 section-gradient-1" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,12 +21,15 @@ export default function TestimonialsSection() {
             Trusted by Thousands
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Real UK Buyers Share Their{" "}
+            Real UK Buyer Feedback in Independent{" "}
             <span className="gradient-text">IPTV Reviews</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
-            These are real customers, real purchases, real results. No scripted lines,
-            no paid placement.
+            Genuine{" "}
+            <Link href="/reviews" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+              UK customer reviews
+            </Link>
+            , real purchases, real results — no scripted lines, no paid placement.
           </p>
         </motion.div>
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Star, MapPin, Quote, ThumbsUp, Gem, MessageCircle } from "lucide-react";
+import Link from "next/link";
 import { TESTIMONIALS, WHATSAPP_BASE_URL } from "@/lib/constants";
 
 const extendedReviews = [
@@ -136,8 +137,11 @@ export default function ReviewsContent() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto max-w-2xl text-lg text-gray-300/90 leading-relaxed"
           >
-            Don&apos;t just take our word for it. Here&apos;s what our subscribers across the
-            United Kingdom have to say about Premium IPTV.
+            Real IPTV reviews from Premium IPTV subscribers across the United Kingdom — honest, unfiltered, and unpaid feedback on every{" "}
+            <Link href="/pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
+              IPTV subscription
+            </Link>{" "}
+            plan.
           </motion.p>
 
           {/* Stats */}

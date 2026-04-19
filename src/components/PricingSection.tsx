@@ -1,10 +1,18 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Shield, CreditCard, Star, Crown, Gem, Award, Medal } from "lucide-react";
-import { PRICING_PLANS, WHATSAPP_BASE_URL } from "@/lib/constants";
+import { PRICING_PLANS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import OrderSummaryModal from "./OrderSummaryModal";
+
+type PricingPlan = (typeof PRICING_PLANS)[number];
+
+const toAccessLabel = (planName: string) => {
+  const match = planName.match(/^(\d+)\s+Months?$/i);
+  return match ? `${match[1]}-Month Access` : `${planName} Access`;
+};
 
 const tierMeta: Record<string, {
   icon: React.ElementType;
@@ -80,21 +88,10 @@ const tierMeta: Record<string, {
 
 export default function PricingSection() {
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
-
-  const planMessages = useMemo(() => {
-    return PRICING_PLANS.reduce(
-      (acc, plan) => ({
-        ...acc,
-        [plan.id]: encodeURIComponent(
-          `Hello Premium IPTV, I'm interested in the ${plan.tier} plan (${plan.name}).`
-        ),
-      }),
-      {} as Record<string, string>
-    );
-  }, []);
+  const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(null);
 
   return (
-    <section id="pricing" className="relative py-24 lg:py-32">
+    <section id="pricing" className="relative py-11 lg:py-16">
       {/* Premium background */}
       <div className="absolute inset-0 section-gradient-1" />
       <div className="absolute inset-0 mesh-gradient" />
@@ -112,11 +109,11 @@ export default function PricingSection() {
             Flexible Plans for Every Budget
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
-            Buy IPTV UK —{" "}
+            Buy IPTV UK Plans &mdash;{" "}
             <span className="gradient-text">Honest Pricing, No Hidden Fees</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            Pick the plan that fits your budget. Every plan covers the same full service — the longer you commit, the lower the monthly rate drops.
+            Every IPTV subscription plan covers the same full service — longer commitments unlock lower monthly rates suitable for any budget.
           </p>
         </motion.div>
 
@@ -234,17 +231,17 @@ export default function PricingSection() {
                   </ul>
 
                   {/* CTA Button */}
-                  <a
-                    href={`${WHATSAPP_BASE_URL}?text=${planMessages[plan.id]}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPlan(plan)}
+                    aria-label={`Choose ${plan.tier} plan — ${plan.name}`}
                     className={cn(
                       "flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition-all active:scale-[0.98] w-full",
-                      meta.button
+                      isPopular ? meta.button : "bg-cyan-500 hover:bg-accent text-white hover:shadow-xl hover:shadow-purple-500/25",
                     )}
                   >
-                    Buy Now
-                  </a>
+                    Choose Plan
+                  </button>
                 </div>
               </motion.div>
             );
@@ -270,6 +267,13 @@ export default function PricingSection() {
           ))}
         </motion.div>
       </div>
+
+      <OrderSummaryModal
+        open={selectedPlan !== null}
+        onClose={() => setSelectedPlan(null)}
+        planName={selectedPlan ? toAccessLabel(selectedPlan.name) : ""}
+        planPrice={selectedPlan?.price ?? 0}
+      />
     </section>
   );
 }

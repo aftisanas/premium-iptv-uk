@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-11 lg:py-16 overflow-hidden">
       {/* Premium gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f0524] via-[#1a0a3e] to-[#0c1445]" />
 
@@ -56,12 +56,23 @@ export default function CTASection() {
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready To Buy IPTV UK?{" "}
-            <span className="gradient-text-hero">Start Watching In 60 Seconds</span>
+            Buy IPTV UK &mdash;{" "}
+            <span className="gradient-text-hero">From Checkout to First 4K Channel in 60 Seconds</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
-            Pick a plan below, pay in under a minute and open your first 4K channel before the kettle boils. Over 50,000 UK households already made the switch.
-            Every order ships with a 30-day refund guarantee, five screens, a built-in VPN and UK support on call.
+            A{" "}
+            <Link href="/pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
+              plan selection
+            </Link>{" "}
+            takes under a minute, with the first 4K channel opening before the kettle boils. Over 50,000 UK households have already made the switch. Every order ships with a{" "}
+            <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
+              30-day refund guarantee
+            </Link>
+            , five screens, a built-in VPN, and{" "}
+            <Link href="/contact" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
+              UK support
+            </Link>{" "}
+            on call.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -70,7 +81,7 @@ export default function CTASection() {
               className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <Play className="h-5 w-5 fill-current" />
-              Buy IPTV Now — From £25.99
+              Buy IPTV Now — From £4.99
               <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
             <a
@@ -85,7 +96,7 @@ export default function CTASection() {
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
-            Got a question before you buy? WhatsApp or email support@buy-iptv-uk.com — we reply in minutes.
+            Pre-purchase enquiries welcome via WhatsApp or support@buy-iptv-uk.com — most replies arrive within minutes.
           </p>
         </motion.div>
       </div>
