@@ -74,7 +74,7 @@ export default function HomePage() {
                 "@type": "WebPage",
                 "@id": webpageId,
                 url: SITE_URL,
-                name: "IPTV Providers UK 2026 | #1 Rated 4K IPTV Service £4.99",
+                name: "Premium IPTV UK 2026 | #1 Rated 4K Premium IPTV Subscription £4.99",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,
@@ -83,7 +83,7 @@ export default function HomePage() {
                   "@id": organizationId,
                 },
                 description:
-                  "Trusted IPTV providers UK 2026. 37,000 channels, 4K UHD, built-in VPN, 24/7 support. The top UK IPTV provider — from £4.99/month with a 30-day refund.",
+                  "Trusted premium IPTV UK service 2026. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
               },
             ],
           }),
@@ -100,7 +100,7 @@ export default function HomePage() {
             url: SITE_URL,
             image: [logoUrl],
             description:
-              "IPTV Providers UK subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £4.99/month on the 12-month term.",
+              "Premium IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £4.99/month on the 12-month term.",
             brand: { "@type": "Brand", name: SITE_NAME },
             offers: PRICING_PLANS.map((plan) => ({
               "@type": "Offer",

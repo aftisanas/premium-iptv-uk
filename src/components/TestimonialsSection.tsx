@@ -21,15 +21,15 @@ export default function TestimonialsSection() {
             Trustpilot Average 4.9/5
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What UK Subscribers Say About{" "}
-            <span className="gradient-text">Their IPTV Provider</span>
+            What UK Customers Say About This{" "}
+            <span className="gradient-text">Premium IPTV Service</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
-            Verified feedback from 50,000 households.{" "}
+            Verified feedback from 50,000 British households.{" "}
             <SectionLink href="/#testimonials" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
-              IPTV reviews
+              Premium IPTV reviews
             </SectionLink>{" "}
-            sourced from confirmed purchases on Trustpilot, Reddit and British IPTV forums.
+            sourced from confirmed purchases on Trustpilot, Reddit and British streaming forums.
           </p>
         </motion.div>
 

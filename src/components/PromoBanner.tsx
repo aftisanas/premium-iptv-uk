@@ -137,7 +137,7 @@ export default function PromoBanner() {
           className="text-lg sm:text-xl md:text-2xl font-extrabold text-white leading-tight"
           style={{ textShadow: "0 0 30px rgba(139, 92, 246, 0.55)" }}
         >
-          <span aria-hidden="true">🔥 </span>IPTV Providers Discount — Claim Before It Ends<span aria-hidden="true"> 🔥</span>
+          <span aria-hidden="true">🔥 </span>Premium IPTV UK Discount — Claim Before It Ends<span aria-hidden="true"> 🔥</span>
         </h2>
 
         <p

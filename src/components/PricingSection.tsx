@@ -109,11 +109,11 @@ export default function PricingSection() {
             Transparent GBP Pricing
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
-            IPTV Providers UK Pricing &mdash;{" "}
+            Premium IPTV UK Pricing &mdash;{" "}
             <span className="gradient-text">Transparent Plans, No Hidden Fees</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            One service, four terms. Channels, 4K and VPN stay identical across every plan. The only variable is term length and savings — the fairest deal offered by UK IPTV providers.
+            One premium IPTV UK service, four terms. Channels, 4K and VPN stay identical across every plan — the only variable is term length and savings.
           </p>
         </motion.div>
 
@@ -188,7 +188,9 @@ export default function PricingSection() {
 
                   {/* Tier name + duration */}
                   <div className="mb-5">
-                    <h3 className="text-xl font-bold text-foreground">{plan.tier}</h3>
+                    <h3 className="text-xl font-bold text-foreground">
+                      Premium IPTV {plan.tier}
+                    </h3>
                     <p className="text-sm text-muted">{plan.name}</p>
                   </div>
 

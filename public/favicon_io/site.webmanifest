@@ -1,7 +1,7 @@
 {
-  "name": "IPTV Providers UK",
-  "short_name": "IPTV Providers UK",
-  "description": "IPTV Providers UK subscription — 37,000 channels, 4K UHD, built-in VPN, five screens, from £4.99/month on the 12-month term.",
+  "name": "Premium IPTV UK",
+  "short_name": "Premium IPTV UK",
+  "description": "Premium IPTV UK subscription — 37,000 channels, 4K UHD, built-in VPN, five screens, from £4.99/month on the 12-month term.",
   "scope": "/",
   "start_url": "/",
   "display": "standalone",

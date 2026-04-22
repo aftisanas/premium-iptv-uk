@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BlogContent from "./BlogContent";
 
 export const metadata: Metadata = {
-  title: "IPTV Providers UK Blog — Guides, Tips & Streaming News",
+  title: "Premium IPTV UK Blog — Guides, Tips & Streaming News",
   description:
-    "Expert guides on IPTV providers UK setup, streaming tips, device compatibility, and the latest from British IPTV providers. The research layer behind every IPTV subscription decision.",
+    "Expert guides on premium IPTV UK setup, streaming tips, device compatibility and the latest from British IPTV. The research layer behind every premium IPTV subscription decision.",
   alternates: { canonical: "/blog" },
 };
 

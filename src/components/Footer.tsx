@@ -18,7 +18,7 @@ export default function Footer() {
               <div className="relative h-12 w-12 shrink-0">
                 <Image
                   src="/buy-iptv-uk.webp"
-                  alt="IPTV Providers UK logo"
+                  alt="Premium IPTV UK logo"
                   fill
                   sizes="48px"
                   loading="lazy"
@@ -26,11 +26,11 @@ export default function Footer() {
                 />
               </div>
               <span className="text-lg font-bold text-foreground">
-                IPTV<span className="gradient-text"> Providers </span>UK
+                Premium<span className="gradient-text"> IPTV </span>UK
               </span>
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              The IPTV providers UK subscribers trust. 37,000 live channels, 198,000 films and series, 4K UHD and a built-in VPN — from £4.99/month on the 12-month term.
+              The premium IPTV UK service British households trust. 37,000 live channels, 198,000 films and series, 4K UHD and a built-in VPN — from £4.99/month on the 12-month term.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">
@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:justify-self-center">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              IPTV Providers UK Links
+              Premium IPTV UK Links
             </h3>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Legal */}
           <div className="lg:justify-self-start">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              IPTV Providers UK Legal
+              Premium IPTV UK Legal
             </h3>
             <ul className="space-y-3">
               {LEGAL_LINKS.map((link) => (
@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="border-t border-violet-100/50 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted text-center sm:text-left">
-              © {new Date().getFullYear()} iptv-providers-uk.com — IPTV Providers UK | Top IPTV Service | Best IPTV Provider | Buy IPTV UK
+              © {new Date().getFullYear()} iptv-premium-uk.com — Premium IPTV UK | Best Premium IPTV Service | Premium IPTV Subscription UK
             </p>
             <p className="text-xs text-gray-500 text-center sm:text-right max-w-md">
               {SITE_NAME} is not affiliated with any television networks or content providers.
