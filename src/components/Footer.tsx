@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="relative h-12 w-12 shrink-0">
                 <Image
-                  src="/buy-iptv-uk.webp"
+                  src="/premium-iptv-uk.webp"
                   alt="Premium IPTV UK logo"
                   fill
                   sizes="48px"
