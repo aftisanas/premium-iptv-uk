@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="border-t border-violet-100/50 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted text-center sm:text-left">
-              © {new Date().getFullYear()} iptv-premium-uk.com — Premium IPTV UK | Best Premium IPTV Service | Premium IPTV Subscription UK
+              © {new Date().getFullYear()} iptv-premium-uk.tv — Premium IPTV UK | Best Premium IPTV Service | Premium IPTV Subscription UK
             </p>
             <p className="text-xs text-gray-500 text-center sm:text-right max-w-md">
               {SITE_NAME} is not affiliated with any television networks or content providers.

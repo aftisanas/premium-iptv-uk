@@ -1,6 +1,6 @@
 export const SITE_NAME = "Premium IPTV UK";
-export const SITE_URL = "https://iptv-premium-uk.com";
-export const CONTACT_EMAIL = "support@iptv-premium-uk.com";
+export const SITE_URL = "https://iptv-premium-uk.tv";
+export const CONTACT_EMAIL = "support@iptv-premium-uk.tv";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -315,7 +315,7 @@ export const CHANNEL_CATEGORIES = [
     count: "5,500+",
     icon: "Trophy" as const,
     channels:
-      "Sky Sports Main Event through Arena, TNT Sports, Premier Sports, Eurosport and the full racing lineup stream live in HD and 4K via the premium IPTV network. Premier League, Championship, FA Cup, Champions League, Six Nations and the Open — all under a single premium IPTV subscription.",
+      "Every major UK sporting moment streams live in HD and 4K — top-tier football, domestic cup ties, European nights, rugby, racing, cricket, golf and combat sports. Whatever the fixture, it lands on the premium IPTV lineup under one subscription — no add-ons, no missed kick-offs.",
     linkHref: "/blog/premier-league-streaming-guide",
     linkLabel: "Premier League premium IPTV guide",
   },
@@ -324,7 +324,7 @@ export const CHANNEL_CATEGORIES = [
     count: "500+",
     icon: "Tv" as const,
     channels:
-      "BBC One through Four, ITV1 to ITV4, Channel 4, Channel 5, E4, More4, Dave, Gold, Sky Max and Sky Atlantic. The premium IPTV UK library includes regional variants and +1 timeshift feeds — the full British lineup in one place.",
+      "The full British entertainment lineup runs from the flagship free-to-air networks to the top premium drama and comedy channels. Regional variants and +1 timeshift feeds come bundled in, so every household catches every show the way they want to watch it — nothing is ever missed.",
     linkHref: "/#pricing",
     linkLabel: "Compare premium IPTV UK plans",
   },
@@ -333,7 +333,7 @@ export const CHANNEL_CATEGORIES = [
     count: "198,000+",
     icon: "Film" as const,
     channels:
-      "Sky Cinema, Film4, Paramount+ originals and international premieres alongside a back-catalogue that stretches decades. The premium IPTV VOD library refreshes the day new releases hit digital.",
+      "A vast on-demand library covers the full spectrum of film and television — the latest blockbusters, award winners, international premieres and a back-catalogue stretching decades. Every genre, every era, and the shelf refreshes the day new releases hit digital.",
     linkHref: "/blog/iptv-vs-sky-comparison",
     linkLabel: "Premium IPTV vs Sky comparison",
   },
@@ -342,7 +342,7 @@ export const CHANNEL_CATEGORIES = [
     count: "800+",
     icon: "Baby" as const,
     channels:
-      "CBeebies, CBBC, Nickelodeon, Nick Jr, Cartoon Network and Disney Channel in HD. A four-digit PIN locks any channel from the premium IPTV parental control tab for safe household viewing.",
+      "A dedicated kids and family line-up covers every age group in HD — pre-school favourites, animation, tween and teen series, educational programming and weekend family films. A four-digit PIN locks any channel from the parental control tab for safe household viewing.",
     linkHref: "/#features",
     linkLabel: "See premium IPTV parental tools",
   },
@@ -351,7 +351,7 @@ export const CHANNEL_CATEGORIES = [
     count: "1,200+",
     icon: "Newspaper" as const,
     channels:
-      "BBC News, Sky News, GB News, CNN International, Al Jazeera and Bloomberg run live in the dedicated premium IPTV news category. Every story, as it breaks, through a single feed.",
+      "Round-the-clock coverage from the UK's leading news broadcasters sits alongside the biggest international networks and financial feeds. The dedicated news category groups them all together — every story, as it breaks, through a single premium IPTV feed.",
     linkHref: "/#faq",
     linkLabel: "Read the premium IPTV FAQ",
   },
@@ -360,7 +360,7 @@ export const CHANNEL_CATEGORIES = [
     count: "17,000+",
     icon: "Globe" as const,
     channels:
-      "Arabic, Urdu, Hindi, Polish, Portuguese, Turkish, French and African feeds stream in full HD. Country filters sit in the sidebar — switching languages takes one tap, bundled into every premium IPTV plan at no extra fee.",
+      "Over forty language packs cover every major region — full HD feeds from Europe, the Middle East, Asia, Africa and the Americas in a single international lineup. Country filters sit in the sidebar, so switching languages takes one tap — bundled into every premium IPTV plan at no extra fee.",
     linkHref: "/#testimonials",
     linkLabel: "Read premium IPTV subscriber reviews",
   },

@@ -1,0 +1,1 @@
+module.exports = {   apps: [{     name: 'iptv-premium-uk',     script: 'node_modules/next/dist/bin/next',     args: 'start -p 3012',     cwd: '/home/iptv-premium-uk/htdocs/iptv-premium-uk.tv',     instances: 1,     autorestart: true,     watch: false,     env: {       NODE_ENV: 'production',       PORT: 3012     }   }] };

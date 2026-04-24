@@ -93,7 +93,7 @@ export default function CTASection() {
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
-            Questions? Email support@iptv-premium-uk.com — average reply under four minutes.
+            Questions? Email support@iptv-premium-uk.tv — average reply under four minutes.
           </p>
         </motion.div>
       </div>
