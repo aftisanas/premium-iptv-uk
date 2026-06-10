@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:iptv-premium-uk.tv)",
+      "Bash(curl *)",
+      "Bash(python3 *)",
+      "Bash(git -C D:/iptv-lp/premium-iptv-uk branch --show-current)",
+      "Bash(git -C D:/iptv-lp/premium-iptv-uk status --short)",
+      "Bash(git -C D:/iptv-lp/premium-iptv-uk stash push -m \"wip: contact email constant\" -- src/lib/constants.ts)",
+      "Bash(git -C D:/iptv-lp/premium-iptv-uk checkout -b seo/homepage-scrub-and-schema-2026-06)",
+      "Bash(git -C D:/iptv-lp/premium-iptv-uk stash pop)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(echo \"tsc exit code: $?\")",
+      "Bash(echo \"eslint exit code: $?\")",
+      "Bash(npx next *)",
+      "Bash(echo \"build exit code: $?\")",
+      "Bash(git *)"
+    ]
+  }
+}
