@@ -72,8 +72,8 @@ export default function HeroSection() {
         >
           <span className="text-white">Premium IPTV UK — </span>
           <br />
-          <span className="text-white">The #1 Rated </span>
-          <span className="gradient-text-hero">Premium IPTV Subscription</span>
+          <span className="text-white">The </span>
+          <span className="gradient-text-hero">4K Premium IPTV Subscription</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -81,9 +81,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.18 }}
-          className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
+          className="hero-tagline text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          37,000 live UK and international channels, 198,000 films and 4K UHD streaming — the premium IPTV UK service 50,000 British households already trust. Rated 4.9/5 on independent reviews.
+          37,000 live UK and international channels, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.99/month with a 30-day refund.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}

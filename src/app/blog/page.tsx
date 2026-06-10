@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BlogContent from "./BlogContent";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Premium IPTV UK Blog — Guides, Tips & Streaming News",
@@ -8,6 +9,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
+const breadcrumbLd = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/blog" },
+]);
+
 export default function BlogPage() {
-  return <BlogContent />;
+  return (
+    <>
+      <BlogContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+    </>
+  );
 }

@@ -33,7 +33,7 @@ export default function FeaturesSection() {
             <span className="gradient-text">Premium IPTV Service</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            Most services list features without evidence. Every pillar of this premium IPTV UK platform is measured, published and guaranteed — and if any falls short, the 30-day refund on every{" "}
+            Most services list features without evidence. Every pillar of this premium IPTV UK platform is measured and published — and if any falls short, the 30-day refund on every{" "}
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
               premium IPTV subscription
             </SectionLink>{" "}covers the household in full.

@@ -3,7 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/constants";
+import { LOGO_PATH, SITE_URL } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -23,11 +23,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Premium IPTV UK 2026 | #1 Rated 4K Premium IPTV Subscription £4.99",
+    default: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
     template: "%s | Premium IPTV UK",
   },
   description:
-    "Trusted premium IPTV UK service 2026. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support. The top premium IPTV subscription from £4.99/month. 30-day refund.",
+    "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
   keywords: [
     "premium iptv",
     "premium iptv uk",
@@ -46,9 +46,10 @@ export const metadata: Metadata = {
   creator: "Premium IPTV UK",
   applicationName: "Premium IPTV UK",
   alternates: {
-    canonical: "/",
+    canonical: `${SITE_URL}/`,
     languages: {
-      "en-GB": "/",
+      "en-GB": `${SITE_URL}/`,
+      "x-default": `${SITE_URL}/`,
     },
   },
   manifest: "/favicon_io/site.webmanifest",
@@ -65,20 +66,32 @@ export const metadata: Metadata = {
       { url: "/favicon_io/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  // TODO: replace LOGO_PATH with a dedicated 1200x630 OG asset
+  // (e.g. /og/premium-iptv-uk-og.png) in a follow-up PR. The logo is
+  // a usable fallback but renders small/centred on social previews.
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "Premium IPTV UK",
-    url: SITE_URL,
-    title: "Premium IPTV UK 2026 — The #1 Rated 4K Premium IPTV Subscription",
+    url: `${SITE_URL}/`,
+    title: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
     description:
-      "The premium IPTV UK service built for British viewers. 37,000 channels, 198,000 films, 4K UHD, built-in VPN and instant activation. 50,000 UK homes already subscribed.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+    images: [
+      {
+        url: LOGO_PATH,
+        width: 512,
+        height: 512,
+        alt: "Premium IPTV UK — 37,000 channels, 4K UHD, UK support",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium IPTV UK 2026 — The #1 Rated 4K Premium IPTV Service",
+    title: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
     description:
-      "Trusted premium IPTV UK. 37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. From £4.99/month.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+    images: [LOGO_PATH],
   },
   robots: {
     index: true,

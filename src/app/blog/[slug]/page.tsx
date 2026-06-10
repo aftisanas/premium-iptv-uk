@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, SITE_URL, SITE_NAME } from "@/lib/constants";
+import { BLOG_POSTS, LOGO_PATH, SITE_URL, SITE_NAME } from "@/lib/constants";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 import BlogPostContent from "./BlogPostContent";
 
 const blogContent: Record<string, { content: string[] }> = {
@@ -68,6 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
       type: "article",
       publishedTime: post.date,
       url: `${SITE_URL}/blog/${post.slug}`,
+      images: [{ url: LOGO_PATH, width: 512, height: 512, alt: post.title }],
     },
   };
 }
@@ -81,27 +83,49 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
     notFound();
   }
 
+  const wordCount = content.content.join(" ").split(/\s+/).filter(Boolean).length;
+  const logoUrl = `${SITE_URL}${LOGO_PATH}`;
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: [logoUrl],
     datePublished: post.date,
     dateModified: post.date,
-    author: { "@type": "Organization", name: SITE_NAME },
+    wordCount,
+    articleSection: post.category,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/about#editor`,
+      name: "Editorial Team",
+      jobTitle: "Editor, Premium IPTV UK",
+      url: `${SITE_URL}/about#editor`,
+    },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/buy-iptv-uk.webp`,
+        url: logoUrl,
+        width: 512,
+        height: 512,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/blog/${post.slug}`,
+      "@id": postUrl,
     },
   };
+
+  const breadcrumbLd = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
 
   return (
     <>
@@ -109,6 +133,10 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
     </>
   );
