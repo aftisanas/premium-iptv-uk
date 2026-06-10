@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Contact Premium IPTV UK — 24/7 Named British Support Team",
@@ -8,6 +9,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+const breadcrumbLd = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
+
 export default function ContactPage() {
-  return <ContactContent />;
+  return (
+    <>
+      <ContactContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+    </>
+  );
 }

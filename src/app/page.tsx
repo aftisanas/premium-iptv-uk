@@ -4,13 +4,13 @@ import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import {
   CONTACT_EMAIL,
   FAQ_ITEMS,
+  LOGO_PATH,
   PRICING_PLANS,
   SITE_NAME,
   SITE_URL,
@@ -21,7 +21,9 @@ export default function HomePage() {
   const websiteId = `${SITE_URL}/#website`;
   const webpageId = `${SITE_URL}/#webpage`;
   const productId = `${SITE_URL}/#product`;
-  const logoUrl = `${SITE_URL}/buy-iptv-uk.webp`;
+  const logoUrl = `${SITE_URL}${LOGO_PATH}`;
+  const homeUrl = `${SITE_URL}/`;
+  const dateModified = new Date().toISOString();
 
   return (
     <>
@@ -31,7 +33,6 @@ export default function HomePage() {
       <PricingSection />
       <DevicesSection />
       <ChannelsSection />
-      <TestimonialsSection />
       <FAQSection />
       <TrustSection />
       <CTASection />
@@ -51,6 +52,15 @@ export default function HomePage() {
                 logo: {
                   "@type": "ImageObject",
                   url: logoUrl,
+                  width: 512,
+                  height: 512,
+                },
+                description:
+                  "UK-focused premium IPTV provider delivering 37,000+ channels, 4K UHD streaming, a built-in VPN and 24/7 British support.",
+                address: {
+                  "@type": "PostalAddress",
+                  addressCountry: "GB",
+                  addressLocality: "London",
                 },
                 contactPoint: {
                   "@type": "ContactPoint",
@@ -59,6 +69,7 @@ export default function HomePage() {
                   areaServed: "GB",
                   email: CONTACT_EMAIL,
                 },
+                sameAs: [],
               },
               {
                 "@type": "WebSite",
@@ -73,17 +84,30 @@ export default function HomePage() {
               {
                 "@type": "WebPage",
                 "@id": webpageId,
-                url: SITE_URL,
-                name: "Premium IPTV UK 2026 | #1 Rated 4K Premium IPTV Subscription £4.99",
+                url: homeUrl,
+                name: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,
                 },
                 about: {
-                  "@id": organizationId,
+                  "@id": productId,
+                },
+                mainEntity: {
+                  "@id": productId,
+                },
+                primaryImageOfPage: {
+                  "@type": "ImageObject",
+                  url: logoUrl,
+                },
+                datePublished: "2026-01-01T00:00:00Z",
+                dateModified,
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", ".hero-tagline"],
                 },
                 description:
-                  "Trusted premium IPTV UK service 2026. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+                  "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
               },
             ],
           }),
@@ -97,26 +121,45 @@ export default function HomePage() {
             "@type": "Product",
             "@id": productId,
             name: `${SITE_NAME} Subscription`,
-            url: SITE_URL,
+            sku: "PIPTVUK-SUB",
+            category: "Streaming Service",
+            url: homeUrl,
             image: [logoUrl],
             description:
               "Premium IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £4.99/month on the 12-month term.",
             brand: { "@type": "Brand", name: SITE_NAME },
+            audience: {
+              "@type": "Audience",
+              geographicArea: {
+                "@type": "Country",
+                name: "United Kingdom",
+              },
+            },
             offers: PRICING_PLANS.map((plan) => ({
               "@type": "Offer",
               name: `${plan.name} Plan`,
               price: plan.price.toFixed(2),
               priceCurrency: "GBP",
+              priceValidUntil: "2026-12-31",
               availability: "https://schema.org/InStock",
               itemCondition: "https://schema.org/NewCondition",
-              url: `${SITE_URL}/#pricing`,
+              url: `${homeUrl}#pricing`,
+              seller: { "@id": organizationId },
+              eligibleDuration: {
+                "@type": "QuantitativeValue",
+                value: plan.months,
+                unitCode: "MON",
+              },
+              hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                applicableCountry: "GB",
+                returnPolicyCategory:
+                  "https://schema.org/MerchantReturnFiniteReturnWindow",
+                merchantReturnDays: 30,
+                returnMethod: "https://schema.org/ReturnByMail",
+                returnFees: "https://schema.org/FreeReturn",
+              },
             })),
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "50000",
-              bestRating: "5",
-            },
           }),
         }}
       />
@@ -126,6 +169,8 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            inLanguage: "en-GB",
+            author: { "@id": organizationId },
             mainEntity: FAQ_ITEMS.map((item) => ({
               "@type": "Question",
               name: item.question,

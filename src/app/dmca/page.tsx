@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Premium IPTV UK DMCA Policy",
@@ -7,9 +8,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/dmca" },
 };
 
+const breadcrumbLd = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "DMCA Policy", path: "/dmca" },
+]);
+
 export default function DMCAPage() {
   return (
     <div className="pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">Premium IPTV UK DMCA Policy</h1>
         <div className="space-y-6 text-sm text-gray-600 leading-relaxed">

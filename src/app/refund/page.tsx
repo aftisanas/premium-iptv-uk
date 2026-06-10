@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
 import { SITE_NAME, CONTACT_EMAIL } from "@/lib/constants";
+import { buildBreadcrumbSchema } from "@/lib/breadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Premium IPTV UK Refund Policy",
-  description: `${SITE_NAME} refund policy. 30-day money-back guarantee on every plan from the #1 rated premium IPTV UK service.`,
+  description: `${SITE_NAME} refund policy. 30-day money-back on every premium IPTV UK subscription plan, processed within 24–48 hours of request.`,
   alternates: { canonical: "/refund" },
 };
+
+const breadcrumbLd = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Refund Policy", path: "/refund" },
+]);
 
 export default function RefundPage() {
   return (
     <div className="pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">Premium IPTV UK Refund Policy</h1>
         <div className="space-y-6 text-sm text-gray-600 leading-relaxed">
