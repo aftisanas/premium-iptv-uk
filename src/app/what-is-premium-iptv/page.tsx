@@ -153,7 +153,7 @@ export default function WhatIsPremiumIptvPage() {
           Infrastructure is the half buyers cannot see from a sales page, which is why it separates premium-tier services from the rest. It covers the server pool that streams your feed, the uptime record behind it, the resolution of the source signal and the support route you reach when something breaks. None of it shows up in a channel count, but all of it shows the first time you watch a live event at peak hour. Each of the four checks below is verifiable before you pay.
         </p>
 
-        <h3 className={h3Class}>Server Quality And Transcoder Capacity</h3>
+        <h3 className={h3Class}>What Makes A Premium IPTV Server Premium?</h3>
         <p className={pClass}>
           A premium-tier server pool runs dedicated transcoders with headroom reserved for peak demand. An oversold pool shares those transcoders across far more viewers than the hardware was specified for, so the picture holds at 2pm and falls apart at 8pm when a live event starts.
         </p>
@@ -184,7 +184,7 @@ export default function WhatIsPremiumIptvPage() {
           An operator that quotes an uptime number with no public status page is asking for trust without evidence. The number costs nothing to print; a status page does not — which is why its presence is the signal that matters.
         </p>
 
-        <h3 className={h3Class}>4K Source Feeds, Not Just 4K Branding</h3>
+        <h3 className={h3Class}>What&rsquo;s The Difference Between Native 4K And Upscaled 4K?</h3>
         <p className={pClass}>
           Most &ldquo;4K IPTV&rdquo; claims describe upscaled HD — Full HD stretched to fit a 4K panel, not a 4K source. A premium service carries genuine 4K feeds at the source, falls back to Full HD when your line dips, and publishes a list of which channels are native 4K rather than implying all are.
         </p>
@@ -229,7 +229,7 @@ export default function WhatIsPremiumIptvPage() {
           Features are the half buyers can see, which is why operators inflate them. Channel totals, library sizes and screen counts are easy to print and hard to audit from a sales page. Each of the four checks below turns a headline figure into something you can test: ignore the big round number, find the smaller one underneath that actually governs your viewing, and confirm the service still updates both.
         </p>
 
-        <h3 className={h3Class}>Channel Count — Total Versus UK Pack</h3>
+        <h3 className={h3Class}>How Many Of A Premium IPTV&rsquo;s Channels Are Actually UK Channels?</h3>
         <p className={pClass}>
           Total feed count is the headline. The UK pack is the number that matters. A service can advertise tens of thousands while carrying only a few hundred a UK household would ever open.
         </p>

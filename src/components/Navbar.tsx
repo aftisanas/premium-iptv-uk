@@ -3,15 +3,30 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import SectionLink from "@/components/SectionLink";
 
+// Routes that render a light background at the top of the page.
+// On these, the navbar must use its scrolled (dark-text) styling
+// from page-load — otherwise the default white-on-transparent
+// styling (designed for dark hero sections) is invisible.
+const LIGHT_BG_ROUTES = new Set<string>([
+  "/about",
+  "/terms",
+  "/privacy",
+  "/dmca",
+  "/refund",
+]);
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const useScrolledStyle = isScrolled || LIGHT_BG_ROUTES.has(pathname);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 80);
@@ -36,7 +51,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
+          useScrolledStyle
             ? "glass shadow-lg shadow-purple-900/5"
             : "bg-transparent"
         )}
@@ -58,9 +73,9 @@ export default function Navbar() {
               </div>
               <span className={cn(
                 "text-lg font-bold tracking-tight lg:text-xl font-[var(--font-display)] transition-colors duration-500",
-                isScrolled ? "text-foreground" : "text-white"
+                useScrolledStyle ? "text-foreground" : "text-white"
               )}>
-                Premium<span className={isScrolled ? "gradient-text" : "text-cyan-400"}> IPTV </span>UK
+                Premium<span className={useScrolledStyle ? "gradient-text" : "text-cyan-400"}> IPTV </span>UK
               </span>
             </Link>
 
@@ -72,7 +87,7 @@ export default function Navbar() {
                   href={link.href}
                   className={cn(
                     "relative px-4 py-2 text-sm font-medium transition-colors group",
-                    isScrolled
+                    useScrolledStyle
                       ? "text-muted hover:text-foreground"
                       : "text-gray-300 hover:text-white"
                   )}
@@ -80,7 +95,7 @@ export default function Navbar() {
                   {link.label}
                   <span className={cn(
                     "absolute bottom-0 left-1/2 h-0.5 w-0 transition-all duration-300 group-hover:left-4 group-hover:w-[calc(100%-2rem)]",
-                    isScrolled
+                    useScrolledStyle
                       ? "bg-gradient-to-r from-violet-600 to-cyan-500"
                       : "bg-gradient-to-r from-purple-400 to-cyan-400"
                   )} />
@@ -103,16 +118,16 @@ export default function Navbar() {
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={cn(
                 "flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2",
-                isScrolled ? "hover:bg-violet-50" : "hover:bg-white/10"
+                useScrolledStyle ? "hover:bg-violet-50" : "hover:bg-white/10"
               )}
               aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileOpen}
               aria-controls="mobile-navigation"
             >
               {isMobileOpen ? (
-                <X className={cn("h-5 w-5", isScrolled ? "text-foreground" : "text-white")} />
+                <X className={cn("h-5 w-5", useScrolledStyle ? "text-foreground" : "text-white")} />
               ) : (
-                <Menu className={cn("h-5 w-5", isScrolled ? "text-foreground" : "text-white")} />
+                <Menu className={cn("h-5 w-5", useScrolledStyle ? "text-foreground" : "text-white")} />
               )}
             </button>
           </div>

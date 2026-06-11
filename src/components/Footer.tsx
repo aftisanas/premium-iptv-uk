@@ -60,6 +60,14 @@ export default function Footer() {
                   </SectionLink>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-muted transition-colors hover:text-violet-600"
+                >
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
 
