@@ -264,7 +264,7 @@ export const CHANNEL_CATEGORIES = [
     icon: "Trophy" as const,
     channels:
       "Every major UK sporting moment streams live in HD and 4K — top-tier football, domestic cup ties, European nights, rugby, racing, cricket, golf and combat sports. Whatever the fixture, it lands on the premium IPTV lineup under one subscription — no add-ons, no missed kick-offs.",
-    linkHref: "/blog/premier-league-streaming-guide",
+    linkHref: "/blog/top-tier-uk-football-streaming-guide",
     linkLabel: "Top-tier UK football streaming guide",
   },
   {
@@ -282,7 +282,7 @@ export const CHANNEL_CATEGORIES = [
     icon: "Film" as const,
     channels:
       "A vast on-demand library covers the full spectrum of film and television — the latest blockbusters, award winners, international premieres and a back-catalogue stretching decades. Every genre, every era, and the shelf refreshes the day new releases hit digital.",
-    linkHref: "/blog/iptv-vs-sky-comparison",
+    linkHref: "/blog/iptv-vs-traditional-pay-tv",
     linkLabel: "Premium IPTV vs traditional pay-TV comparison",
   },
   {
@@ -334,19 +334,19 @@ export const BLOG_POSTS = [
     category: "Tutorial",
   },
   {
-    slug: "iptv-vs-sky-comparison",
-    title: "Premium IPTV vs Sky — Which Service Wins For UK Viewers In 2026?",
+    slug: "iptv-vs-traditional-pay-tv",
+    title: "Premium IPTV vs Traditional UK Pay-TV — Which Wins For UK Viewers In 2026?",
     excerpt:
-      "An honest comparison of modern premium IPTV UK services and Sky TV. Costs, channels, picture quality, flexibility and long-term value — everything a British household needs to make the switch.",
+      "An honest comparison of modern premium IPTV UK services and traditional UK pay-TV. Costs, channel coverage, picture quality, flexibility and long-term value — everything a British household needs to make the switch.",
     date: "2026-03-15",
     readTime: "8 min read",
     category: "Comparison",
   },
   {
-    slug: "premier-league-streaming-guide",
-    title: "Watch Every Premier League Match — Premium IPTV Streaming Guide",
+    slug: "top-tier-uk-football-streaming-guide",
+    title: "Watch Every Top-Tier UK Football Fixture — Premium IPTV Streaming Guide",
     excerpt:
-      "Every Premier League match, plus Championship, La Liga, Serie A and more — all in stunning HD and 4K through a single premium IPTV UK subscription.",
+      "Every domestic top-flight football match, plus European leagues, all in stunning HD and 4K through a single premium IPTV UK subscription.",
     date: "2026-03-10",
     readTime: "5 min read",
     category: "Sports",
