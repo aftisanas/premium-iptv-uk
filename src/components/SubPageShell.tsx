@@ -90,10 +90,9 @@ export default function SubPageShell({
     datePublished: byline.publishedDate,
     dateModified: byline.updatedDate,
     author: {
-      "@type": "Person",
-      name: byline.name,
-      jobTitle: byline.role,
-      description: byline.description,
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
     },
     publisher: {
       "@type": "Organization",

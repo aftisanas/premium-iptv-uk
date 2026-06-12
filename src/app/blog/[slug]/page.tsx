@@ -98,11 +98,9 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
     wordCount,
     articleSection: post.category,
     author: {
-      "@type": "Person",
-      "@id": `${SITE_URL}/about#editor`,
-      name: "Editorial Team",
-      jobTitle: "Editor, Premium IPTV UK",
-      url: `${SITE_URL}/about#editor`,
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
     },
     publisher: {
       "@type": "Organization",
