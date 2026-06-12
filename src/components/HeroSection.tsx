@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.18 }}
           className="hero-tagline text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          37,000 live UK and international channels, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.99/month with a 30-day refund.
+          37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.99/month with a 30-day refund.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}
