@@ -234,7 +234,7 @@ export default function WhatIsPremiumIptvPage() {
           Total feed count is the headline. The UK pack is the number that matters. A service can advertise tens of thousands while carrying only a few hundred a UK household would ever open.
         </p>
         <p className={pClass}>
-          A premium tier typically holds 4,000–8,000 UK-relevant feeds inside its larger total — domestic top-flight football coverage, the main UK broadcasters, terrestrial channels and the regional variants viewers actually watch. This service publishes 37,000+ channels in total, with an 800+ UK pack inside that figure.
+          A premium tier typically holds 4,000–8,000 UK-relevant feeds inside its larger total — domestic top-flight football coverage, the main UK broadcasters, terrestrial channels and the regional variants viewers actually watch. This service publishes 37,000+ channels in total, with a substantial UK-relevant pack inside that figure covering domestic top-flight football, the main UK broadcasters, terrestrial channels and the regional variants viewers actually watch.
         </p>
         <p className={pClass}>
           When you compare services, ask for the UK pack size, not the global total. The global number is inflated by feeds you will never select; the UK pack is what you are paying to watch — the only count worth comparing like for like.
