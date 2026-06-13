@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Clock, ArrowLeft, Tag } from "lucide-react";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import SectionLink from "@/components/SectionLink";
 
 interface BlogPostContentProps {
@@ -14,7 +15,7 @@ interface BlogPostContentProps {
     readTime: string;
     category: string;
   };
-  content: string[];
+  content: ReactNode;
 }
 
 export default function BlogPostContent({ post, content }: BlogPostContentProps) {
@@ -76,58 +77,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
             transition={{ delay: 0.2 }}
             className="prose-custom"
           >
-            {content.map((block, i) => {
-              const lines = block.split("\n");
-              return (
-                <div key={i} className="mb-8">
-                  {lines.map((line, j) => {
-                    if (line.startsWith("## ")) {
-                      return (
-                        <h2
-                          key={j}
-                          className="text-2xl font-bold text-foreground mt-10 mb-4"
-                        >
-                          {line.replace("## ", "")}
-                        </h2>
-                      );
-                    }
-                    if (line.startsWith("- **")) {
-                      const match = line.match(/- \*\*(.+?)\*\*(.+)/);
-                      if (match) {
-                        return (
-                          <li
-                            key={j}
-                            className="text-sm text-gray-600 leading-relaxed ml-4 mb-2 list-disc"
-                          >
-                            <strong className="text-foreground">{match[1]}</strong>
-                            {match[2]}
-                          </li>
-                        );
-                      }
-                    }
-                    if (line.startsWith("- ")) {
-                      return (
-                        <li
-                          key={j}
-                          className="text-sm text-gray-600 leading-relaxed ml-4 mb-2 list-disc"
-                        >
-                          {line.replace("- ", "")}
-                        </li>
-                      );
-                    }
-                    if (line.trim() === "") return <br key={j} />;
-                    return (
-                      <p
-                        key={j}
-                        className="text-base text-gray-600 leading-relaxed mb-4"
-                      >
-                        {line}
-                      </p>
-                    );
-                  })}
-                </div>
-              );
-            })}
+            {content}
           </motion.div>
 
           {/* CTA */}

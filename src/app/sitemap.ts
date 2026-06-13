@@ -20,22 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/refund`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
   ];
 
-  // Blog posts whose bodies were taken offline in the 2026-06 compliance
-  // scrub render a noindex stub. Listed in the sitemap at low priority so
-  // Google can discover the canonical URL once the rewrite ships.
-  const STUB_SLUGS = new Set<string>([
-    "best-iptv-uk-guide-2026",
-    "iptv-vs-traditional-pay-tv",
-    "top-tier-uk-football-streaming-guide",
-  ]);
-
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.filter((post) =>
     Boolean(post.slug)
   ).map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
     lastModified: parseDateOrNow(post.date),
     changeFrequency: "monthly",
-    priority: STUB_SLUGS.has(post.slug) ? 0.4 : 0.7,
+    priority: 0.7,
   }));
 
   return [...staticRoutes, ...blogRoutes];
