@@ -15,7 +15,8 @@
       "Bash(echo \"eslint exit code: $?\")",
       "Bash(npx next *)",
       "Bash(echo \"build exit code: $?\")",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(npm run *)"
     ]
   }
 }

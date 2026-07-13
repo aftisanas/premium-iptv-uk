@@ -37,6 +37,9 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-violet-500/60" />
                 <span>{CONTACT_EMAIL}</span>
               </div>
+              <p className="text-xs text-muted/80 pl-6">
+                Shared network mailbox at buy-iptv-uk.com.
+              </p>
               <div className="flex items-center gap-2 text-sm text-muted">
                 <MapPin className="h-4 w-4 text-violet-500/60" />
                 <span>London, United Kingdom</span>
