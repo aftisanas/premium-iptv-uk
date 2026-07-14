@@ -1,5 +1,3 @@
-"use client";
-
 // Ported from the pillar site (best-iptv-uk-subscription.com) on 2026-06-11.
 // Adaptations for iptv-premium-uk.tv:
 //  • Logo URL now sourced from LOGO_PATH constant (the pillar hardcoded
@@ -7,23 +5,19 @@
 //    lives in src/lib/constants.ts.
 //  • Back-link text changed from "Best IPTV UK" → "Premium IPTV UK".
 //  • Related-guides subtitle changed to reference the Premium IPTV UK cluster.
-//  • All other imports (ParticleBackground, PricingSection, CTASection, cn)
-//    map 1:1 to local components that already exist with identical export
-//    shape — no substitutions required.
-//  • FAQ SSR pattern preserved exactly: every <motion.div> answer panel is
+//  • FAQ SSR pattern preserved via FAQAccordion island: every answer panel is
 //    rendered in the DOM at all times with height/opacity controlling
-//    visibility (NOT AnimatePresence + isOpen-conditional). This keeps the
-//    full answer text in the initial server-rendered HTML for crawlers.
+//    visibility (NOT AnimatePresence + isOpen-conditional). Full answer text
+//    stays in initial server HTML for crawlers.
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ArrowLeft, Tag, Clock, User, ChevronDown, ChevronRight } from "lucide-react";
+import { ArrowLeft, Tag, Clock, User, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import ParticleBackground from "./ParticleBackground";
 import PricingSection from "./PricingSection";
 import CTASection from "./CTASection";
+import HeroMotion from "./HeroMotion";
+import FAQAccordion from "./FAQAccordion";
 import { LOGO_PATH, SITE_NAME, SITE_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 
 export interface SubPageByline {
   readonly name: string;
@@ -74,8 +68,6 @@ export default function SubPageShell({
   faqItems,
   children,
 }: SubPageShellProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   const canonicalUrl = `${SITE_URL}/${slug.replace(/^\/+/, "")}`;
   const logoUrl = `${SITE_URL}${LOGO_PATH}`;
 
@@ -215,11 +207,7 @@ export default function SubPageShell({
         {/* Hero content */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-24">
           {/* Back link */}
-          <motion.div
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <HeroMotion x={-10} duration={0.5}>
             <Link
               href="/"
               className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-6"
@@ -227,45 +215,34 @@ export default function SubPageShell({
               <ArrowLeft className="h-4 w-4" />
               Back to Premium IPTV UK
             </Link>
-          </motion.div>
+          </HeroMotion>
 
           {/* Category badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-          >
+          <HeroMotion scale={0.95} duration={0.5} delay={0.05}>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-400/25 bg-white/[0.07] backdrop-blur-md px-4 py-1.5 text-xs font-semibold tracking-wider text-purple-200 uppercase mb-6">
               <Tag className="h-3 w-3 text-cyan-300" />
               {category}
             </span>
-          </motion.div>
+          </HeroMotion>
 
-          {/* H1 */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] text-white mb-5"
-          >
+          {/* H1 — plain server-rendered for LCP */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] text-white mb-5">
             {title}
-          </motion.h1>
+          </h1>
 
           {/* Intro paragraph */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.18 }}
+          <HeroMotion
+            y={20}
+            delay={0.18}
             className="text-base sm:text-lg text-gray-300/90 leading-relaxed max-w-3xl mb-8"
           >
             {intro}
-          </motion.p>
+          </HeroMotion>
 
           {/* Byline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
+          <HeroMotion
+            y={20}
+            delay={0.25}
             className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-400"
           >
             <span className="inline-flex items-center gap-1.5">
@@ -283,7 +260,7 @@ export default function SubPageShell({
                 <span>{readTime}</span>
               </span>
             )}
-          </motion.div>
+          </HeroMotion>
         </div>
 
         {/* Bottom gradient fade to site background */}
@@ -313,57 +290,7 @@ export default function SubPageShell({
               </h2>
             </div>
 
-            <div className="space-y-3">
-              {faqItems.map((item, i) => {
-                const isOpen = openFaq === i;
-                return (
-                  <div key={`${item.question}-${i}`}>
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                      aria-expanded={isOpen}
-                      aria-controls={`subpage-faq-panel-${i}`}
-                      id={`subpage-faq-trigger-${i}`}
-                      className={cn(
-                        "w-full flex items-center justify-between gap-4 rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2",
-                        isOpen
-                          ? "border-violet-200 bg-violet-50/60 shadow-sm"
-                          : "border-violet-100/50 bg-white hover:border-violet-200 hover:shadow-sm",
-                      )}
-                    >
-                      <span className="text-sm sm:text-base font-medium text-foreground pr-4">
-                        {item.question}
-                      </span>
-                      <ChevronDown
-                        aria-hidden="true"
-                        className={cn(
-                          "h-5 w-5 shrink-0 text-muted transition-transform duration-300",
-                          isOpen && "rotate-180 text-violet-600",
-                        )}
-                      />
-                    </button>
-                    {/* SSR-preserved: always rendered, height/opacity controls visibility */}
-                    <motion.div
-                      id={`subpage-faq-panel-${i}`}
-                      role="region"
-                      aria-labelledby={`subpage-faq-trigger-${i}`}
-                      aria-hidden={!isOpen}
-                      initial={false}
-                      animate={{
-                        height: isOpen ? "auto" : 0,
-                        opacity: isOpen ? 1 : 0,
-                      }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 py-4 text-sm text-muted leading-relaxed">
-                        {item.answer}
-                      </div>
-                    </motion.div>
-                  </div>
-                );
-              })}
-            </div>
+            <FAQAccordion items={faqItems} variant="subpage" />
           </div>
         </section>
       )}

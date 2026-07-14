@@ -1,10 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield,
 } from "lucide-react";
 import SectionLink from "./SectionLink";
+import MotionReveal from "./MotionReveal";
 import { FEATURES } from "@/lib/constants";
 
 const iconMap = {
@@ -19,12 +17,7 @@ export default function FeaturesSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center lg:mb-12 mb-10"
-        >
+        <MotionReveal y={20} className="text-center lg:mb-12 mb-10">
           <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             Eight Measured Pillars
           </span>
@@ -45,19 +38,16 @@ export default function FeaturesSection() {
               premium IPTV subscription
             </SectionLink>{" "}covers the household in full.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         {/* Features grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {FEATURES.map((feature, i) => {
             const Icon = iconMap[feature.icon];
             return (
-              <motion.div
+              <MotionReveal
                 key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                delay={i * 0.05}
                 className="group relative rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-500 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card"
               >
                 {/* Hover glow */}
@@ -74,7 +64,7 @@ export default function FeaturesSection() {
                     {feature.description}
                   </p>
                 </div>
-              </motion.div>
+              </MotionReveal>
             );
           })}
         </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Check, Shield, CreditCard, Star, Crown, Gem, Award, Medal } from "lucide-react";
 import { PRICING_PLANS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import MotionReveal from "./MotionReveal";
 import OrderSummaryModal from "./OrderSummaryModal";
 
 type PricingPlan = (typeof PRICING_PLANS)[number];
@@ -98,12 +98,7 @@ export default function PricingSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
+        <MotionReveal y={20} className="text-center mb-14">
           <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 border border-violet-200 px-5 py-2 text-sm font-semibold text-violet-700 mb-5">
             <Gem className="h-4 w-4" />
             Transparent GBP Pricing
@@ -115,7 +110,7 @@ export default function PricingSection() {
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
             One premium IPTV UK service, four terms. Channels, 4K and VPN stay identical across every plan — the only variable is term length and savings.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         {/* 4-plan grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-start">
@@ -126,26 +121,22 @@ export default function PricingSection() {
             const TierIcon = meta.icon;
 
             return (
-              <motion.div
-                key={plan.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                onMouseEnter={() => setHoveredPlan(plan.id)}
-                onMouseLeave={() => setHoveredPlan(null)}
-                className={cn(
-                  "group relative rounded-2xl border bg-white transition-all duration-500",
-                  meta.border,
-                  meta.hoverBorder,
-                  isPopular
-                    ? "border-violet-300 shadow-xl shadow-violet-100/60 lg:scale-[1.04] z-10"
-                    : "shadow-sm",
-                  !isPopular && isHovered && "-translate-y-2 shadow-lg",
-                  isPopular && isHovered && "-translate-y-3",
-                  meta.glow
-                )}
-              >
+              <MotionReveal key={plan.id} delay={i * 0.08}>
+                <div
+                  onMouseEnter={() => setHoveredPlan(plan.id)}
+                  onMouseLeave={() => setHoveredPlan(null)}
+                  className={cn(
+                    "group relative rounded-2xl border bg-white transition-all duration-500",
+                    meta.border,
+                    meta.hoverBorder,
+                    isPopular
+                      ? "border-violet-300 shadow-xl shadow-violet-100/60 lg:scale-[1.04] z-10"
+                      : "shadow-sm",
+                    !isPopular && isHovered && "-translate-y-2 shadow-lg",
+                    isPopular && isHovered && "-translate-y-3",
+                    meta.glow
+                  )}
+                >
                 {/* Popular ribbon effect */}
                 {isPopular && (
                   <>
@@ -245,18 +236,14 @@ export default function PricingSection() {
                     Choose Plan
                   </button>
                 </div>
-              </motion.div>
+                </div>
+              </MotionReveal>
             );
           })}
         </div>
 
         {/* Trust bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-14 flex flex-wrap items-center justify-center gap-6 lg:gap-10"
-        >
+        <MotionReveal y={0} className="mt-14 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
           {[
             { icon: Shield, label: "SSL-secured Stripe & PayPal checkout" },
             { icon: CreditCard, label: "30-day money-back guarantee" },
@@ -267,7 +254,7 @@ export default function PricingSection() {
               <span>{item.label}</span>
             </div>
           ))}
-        </motion.div>
+        </MotionReveal>
       </div>
 
       <OrderSummaryModal

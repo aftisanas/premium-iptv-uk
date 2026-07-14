@@ -1,10 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Play, MessageCircle, ChevronRight } from "lucide-react";
 import ParticleBackground from "./ParticleBackground";
 import PromoBanner from "./PromoBanner";
 import SectionLink from "./SectionLink";
+import HeroMotion from "./HeroMotion";
 
 export default function HeroSection() {
   return (
@@ -63,44 +61,32 @@ export default function HeroSection() {
 
       {/* ── Content ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-2 flex flex-col items-center text-center">
-        {/* Headline — 2 lines, matches reference sizing */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
-        >
+        {/* Headline — plain server-rendered <h1> for LCP */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2">
           <span className="text-white">Premium IPTV UK — </span>
           <br />
           <span className="text-white">The </span>
           <span className="gradient-text-hero">4K Premium IPTV Subscription</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18 }}
+        <HeroMotion
+          delay={0.18}
+          y={20}
           className="hero-tagline text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
           37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.17/month with a 30-day refund.
-        </motion.p>
+        </HeroMotion>
 
         {/* Promo banner — replaces hero device image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative w-full mt-6 sm:mt-8"
-        >
+        <HeroMotion delay={0.25} y={30} className="relative w-full mt-6 sm:mt-8">
           <PromoBanner />
-        </motion.div>
+        </HeroMotion>
 
         {/* CTA Buttons — directly under image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+        <HeroMotion
+          delay={0.35}
+          y={30}
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <SectionLink
@@ -119,7 +105,7 @@ export default function HeroSection() {
             <MessageCircle className="h-5 w-5 text-cyan-400" />
             <span>Compare All Plans</span>
           </SectionLink>
-        </motion.div>
+        </HeroMotion>
       </div>
 
 
@@ -128,4 +114,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
