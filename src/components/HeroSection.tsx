@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.18 }}
           className="hero-tagline text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.99/month with a 30-day refund.
+          37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.17/month with a 30-day refund.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}
@@ -108,7 +108,7 @@ export default function HeroSection() {
             className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/40 transition-all hover:shadow-2xl hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto justify-center"
           >
             <Play className="h-5 w-5 fill-current" />
-            <span>Choose A Premium IPTV Plan — From £4.99/mo</span>
+            <span>Choose A Premium IPTV Plan — From £4.17/mo</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
           </SectionLink>

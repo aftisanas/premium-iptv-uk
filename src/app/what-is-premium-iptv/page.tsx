@@ -47,12 +47,12 @@ const FAQ_ITEMS: ReadonlyArray<SubPageFAQItem> = [
   {
     question: "Does premium IPTV cost more than traditional UK pay-TV?",
     answer:
-      "Premium IPTV is generally priced below traditional UK pay-TV, though comparison depends on what you include. The UK television licence alone costs £180 a year from 1 April 2026 — about £15 a month — before any pay-TV subscription on top, per gov.uk. A premium IPTV plan such as this service's 12-month option at £59.99 works out near £5 a month, with no separate hardware contract. The figures are not strictly like for like, since a licence and a commercial package fund different things. But on monthly outlay, a single premium IPTV subscription typically sits well under a licence plus a traditional pay-TV tier.",
+      "Premium IPTV is generally priced below traditional UK pay-TV, though comparison depends on what you include. The UK television licence alone costs £180 a year from 1 April 2026 — about £15 a month — before any pay-TV subscription on top, per gov.uk. A premium IPTV plan such as this service's 12-month option at £49.99 works out near £4.17 a month, with no separate hardware contract. The figures are not strictly like for like, since a licence and a commercial package fund different things. But on monthly outlay, a single premium IPTV subscription typically sits well under a licence plus a traditional pay-TV tier.",
   },
   {
     question: "Can I get 4K UHD on a premium IPTV service for under £10 a month?",
     answer:
-      "Yes, on price — but the resolution claim needs checking separately. This service's plans fall under £10 a month once the term is spread out, from £59.99 over 12 months to £89.99 over 24 months. Price, though, says nothing about whether the 4K is real. Genuine 4K UHD requires native source feeds, not upscaled HD, and a published list naming which channels stream at that resolution. It also requires hardware that decodes HEVC — typically a UK Smart TV sold since 2018 or a 4K Max class streaming stick. So a sub-£10 plan can deliver real 4K, provided the service names its native-4K channels and your device can decode them.",
+      "Yes, on price — but the resolution claim needs checking separately. This service's plans fall under £10 a month once the term is spread out, from £49.99 over 12 months to £79.99 over 24 months. Price, though, says nothing about whether the 4K is real. Genuine 4K UHD requires native source feeds, not upscaled HD, and a published list naming which channels stream at that resolution. It also requires hardware that decodes HEVC — typically a UK Smart TV sold since 2018 or a 4K Max class streaming stick. So a sub-£10 plan can deliver real 4K, provided the service names its native-4K channels and your device can decode them.",
   },
   {
     question: "How do I verify a premium IPTV service before I pay?",
@@ -267,7 +267,7 @@ export default function WhatIsPremiumIptvPage() {
           Premium pricing is transparent pricing: figures in GBP throughout, the per-month cost shown next to the total, renewal terms in plain text rather than buried, and one refund window across every plan length.
         </p>
         <p className={pClass}>
-          This service lists its plans in GBP with the term stated up front: £25.99 for 3 months, £39.99 for 6 months, £59.99 for 12 months and £89.99 for 24 months. A 30-day refund applies to every plan length, not just the shortest.
+          This service lists its plans in GBP with the term stated up front: £25.99 for 3 months, £39.99 for 6 months, £49.99 for 12 months and £79.99 for 24 months. A 30-day refund applies to every plan length, not just the shortest.
         </p>
         <p className={pClass}>
           The check is simple. Convert each plan to its monthly cost and confirm the refund window is the same across all of them. A service that prices clearly and refunds consistently has nothing to hide. One that does neither is relying on you not doing the maths.

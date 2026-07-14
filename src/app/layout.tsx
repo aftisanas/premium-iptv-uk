@@ -23,11 +23,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
+    default: "Premium IPTV UK 2026 — 4K Subscription From £4.17/mo",
     template: "%s | Premium IPTV UK",
   },
   description:
-    "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+    "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
   keywords: [
     "premium iptv",
     "premium iptv uk",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "Premium IPTV UK",
     url: `${SITE_URL}/`,
-    title: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
+    title: "Premium IPTV UK 2026 — 4K Subscription From £4.17/mo",
     description:
-      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
     images: [
       {
         url: LOGO_PATH,
@@ -88,9 +88,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium IPTV UK 2026 — 4K Subscription From £4.99/mo",
+    title: "Premium IPTV UK 2026 — 4K Subscription From £4.17/mo",
     description:
-      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.99/month with a 30-day refund.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
     images: [LOGO_PATH],
   },
   robots: {
