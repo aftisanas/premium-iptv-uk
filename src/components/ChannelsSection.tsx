@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Tv, Trophy, Film, Baby, Newspaper, Globe, ArrowRight } from "lucide-react";
 import SectionLink from "./SectionLink";
+import MotionReveal from "./MotionReveal";
 import { CHANNEL_CATEGORIES } from "@/lib/constants";
 
 const iconMap = { Tv, Trophy, Film, Baby, Newspaper, Globe } as const;
@@ -13,12 +11,7 @@ export default function ChannelsSection() {
       <div className="absolute inset-0 mesh-gradient" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <MotionReveal y={20} className="text-center mb-16">
           <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             37,000 Live Channels
           </span>
@@ -32,18 +25,16 @@ export default function ChannelsSection() {
               premium IPTV subscription
             </SectionLink>{" "}— no add-ons, no bolt-ons, no hidden fees.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {CHANNEL_CATEGORIES.map((cat, i) => {
             const Icon = iconMap[cat.icon];
             return (
-              <motion.div
+              <MotionReveal
                 key={cat.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                y={20}
+                delay={i * 0.05}
                 className="group relative overflow-hidden rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-500 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card flex flex-col"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-50 to-transparent rounded-bl-full opacity-0 transition-opacity group-hover:opacity-100" />
@@ -69,7 +60,7 @@ export default function ChannelsSection() {
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </SectionLink>
                 </div>
-              </motion.div>
+              </MotionReveal>
             );
           })}
         </div>

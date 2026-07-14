@@ -1,16 +1,14 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Play, MessageCircle, ChevronRight } from "lucide-react";
 import ParticleBackground from "./ParticleBackground";
 import PromoBanner from "./PromoBanner";
 import SectionLink from "./SectionLink";
+import HeroMotion from "./HeroMotion";
 
 export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-[100dvh] md:h-[104vh] min-h-[640px] flex flex-col overflow-hidden"
+      className="relative min-h-[720px] md:min-h-[900px] lg:min-h-[940px] flex flex-col overflow-hidden"
     >
       {/* ── Deep premium gradient background ── */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
@@ -63,44 +61,32 @@ export default function HeroSection() {
 
       {/* ── Content ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-2 flex flex-col items-center text-center">
-        {/* Headline — 2 lines, matches reference sizing */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
-        >
+        {/* Headline — plain server-rendered <h1> for LCP */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2">
           <span className="text-white">Premium IPTV UK — </span>
           <br />
           <span className="text-white">The </span>
           <span className="gradient-text-hero">4K Premium IPTV Subscription</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18 }}
+        <HeroMotion
+          delay={0.18}
+          y={20}
           className="hero-tagline text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.99/month with a 30-day refund.
-        </motion.p>
+          37,000+ live channels with a substantial UK-relevant pack inside the total, 198,000 films and 4K UHD streaming — the premium IPTV UK service built for British viewers. From £4.17/month with a 30-day refund.
+        </HeroMotion>
 
         {/* Promo banner — replaces hero device image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="relative w-full mt-6 sm:mt-8"
-        >
+        <HeroMotion delay={0.25} y={30} className="relative w-full mt-6 sm:mt-8">
           <PromoBanner />
-        </motion.div>
+        </HeroMotion>
 
         {/* CTA Buttons — directly under image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+        <HeroMotion
+          delay={0.35}
+          y={30}
           className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <SectionLink
@@ -108,7 +94,7 @@ export default function HeroSection() {
             className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/40 transition-all hover:shadow-2xl hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto justify-center"
           >
             <Play className="h-5 w-5 fill-current" />
-            <span>Choose A Premium IPTV Plan — From £4.99/mo</span>
+            <span>Choose A Premium IPTV Plan — From £4.17/mo</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
           </SectionLink>
@@ -119,7 +105,7 @@ export default function HeroSection() {
             <MessageCircle className="h-5 w-5 text-cyan-400" />
             <span>Compare All Plans</span>
           </SectionLink>
-        </motion.div>
+        </HeroMotion>
       </div>
 
 
@@ -128,4 +114,3 @@ export default function HeroSection() {
     </section>
   );
 }
-

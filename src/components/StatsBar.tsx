@@ -1,17 +1,33 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import MotionReveal from "./MotionReveal";
 import { STATS } from "@/lib/constants";
 
 function AnimatedNumber({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2, margin: "0px 0px -10% 0px" });
+  const [inView, setInView] = useState(false);
   const numericMatch = value.match(/[\d,]+/);
   const numericStr = numericMatch ? numericMatch[0] : "";
   const prefix = numericStr ? value.slice(0, value.indexOf(numericStr)) : "";
   const suffix = numericStr ? value.slice(value.indexOf(numericStr) + numericStr.length) : "";
   const [displayed, setDisplayed] = useState(numericStr ? `${prefix}0${suffix}` : value);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!inView || !numericStr) {
@@ -54,12 +70,11 @@ export default function StatsBar() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {STATS.map((stat, i) => (
-            <motion.div
+            <MotionReveal
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}
-              transition={{ delay: i * 0.04, duration: 0.35 }}
+              y={20}
+              delay={i * 0.04}
+              duration={0.35}
               className="relative text-center"
             >
               <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-2">
@@ -71,7 +86,7 @@ export default function StatsBar() {
               {i < STATS.length - 1 && (
                 <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-px bg-gradient-to-b from-transparent via-violet-200 to-transparent" />
               )}
-            </motion.div>
+            </MotionReveal>
           ))}
         </div>
       </div>

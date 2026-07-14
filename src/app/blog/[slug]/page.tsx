@@ -63,7 +63,7 @@ const iptvVsPayTvFaqItems: FaqItem[] = [
   {
     question: "Is premium IPTV cheaper than traditional UK pay-TV in the long run?",
     answer:
-      "On the figures, premium IPTV is usually the cheaper option over several years. A representative five-year total for traditional pay-TV at £50 a month plus the TV licence is around £3,900, against roughly £1,125 for this service's 24-month plan renewed across the same period plus the same licence. The gap is large, but it rests on assumptions: the IPTV total assumes the service stays live and its pricing holds, while the pay-TV total assumes the package never climbs above entry tier. Both can shift. The honest summary is that IPTV has a clear cost advantage on paper, provided the conditions behind the maths hold true.",
+      "On the figures, premium IPTV is usually the cheaper option over several years. A representative five-year total for traditional pay-TV at £50 a month plus the TV licence is around £3,900, against roughly £1,100 for this service's 24-month plan renewed across the same period plus the same licence. The gap is large, but it rests on assumptions: the IPTV total assumes the service stays live and its pricing holds, while the pay-TV total assumes the package never climbs above entry tier. Both can shift. The honest summary is that IPTV has a clear cost advantage on paper, provided the conditions behind the maths hold true.",
   },
   {
     question: "Does premium IPTV deliver the same picture quality as satellite or cable?",
@@ -277,7 +277,7 @@ const blogContent: Record<string, BlogPostBody> = {
         <div className="mb-8">
           <h2 className={H2}>Criterion 6 — Transparent GBP Pricing</h2>
           <p className={P}>
-            Pricing should be legible at a glance. The signals of an honest seller are simple: prices in GBP throughout, a per-month figure shown next to the total so you can compare plans on equal terms, and renewal terms written in plain text rather than buried. This service publishes its plans openly — £25.99 for three months, £39.99 for six, £59.99 for twelve, and £89.99 for twenty-four — with the longer commitments lowering the effective monthly cost.
+            Pricing should be legible at a glance. The signals of an honest seller are simple: prices in GBP throughout, a per-month figure shown next to the total so you can compare plans on equal terms, and renewal terms written in plain text rather than buried. This service publishes its plans openly — £25.99 for three months, £39.99 for six, £49.99 for twelve, and £79.99 for twenty-four — with the longer commitments lowering the effective monthly cost.
           </p>
           <p className={P}>
             Two warning signs recur. Prices quoted in dollars on a site selling to UK buyers suggest the operation is not built for this market and may surprise you at renewal. And the most consistent scam in this category is the &ldquo;lifetime&rdquo; deal: a single payment promising channels forever. The economics never support it, the feeds rely on ongoing costs no one-off fee can cover, and the offer typically vanishes along with the service. A plan you can read and renew predictably is worth more than a headline number that cannot last.
@@ -354,7 +354,7 @@ const blogContent: Record<string, BlogPostBody> = {
             Cost is easiest to read on a monthly basis. Traditional UK satellite or cable typically starts at £15–£18 a month for a base package, rising to roughly £40–£100 a month once sport and cinema add-ons are stacked on top. Sitting underneath that, the UK TV licence costs £180 a year from 1 April 2026 (<a href="https://www.gov.uk/government/news/cost-of-tv-licence-fee-set-for-202627" target="_blank" rel="noopener noreferrer" className={EXT_LINK}>gov.uk</a>), a separate fixed charge required for watching live broadcast television regardless of how it reaches the screen.
           </p>
           <p className={P}>
-            Premium IPTV from this service is priced per term rather than per month, which changes the arithmetic. The four plans are £25.99 for three months, £39.99 for six, £59.99 for twelve and £89.99 for twenty-four. Converted to a monthly figure, those work out at £8.66, £6.67, £5.00 and £3.75 respectively, so the longer the term, the lower the effective monthly cost. The same TV licence requirement applies to anyone watching live broadcast feeds, so it sits outside either comparison as a shared fixed cost.
+            Premium IPTV from this service is priced per term rather than per month, which changes the arithmetic. The four plans are £25.99 for three months, £39.99 for six, £49.99 for twelve and £79.99 for twenty-four. Converted to a monthly figure, those work out at £8.66, £6.67, £4.17 and £3.33 respectively, so the longer the term, the lower the effective monthly cost. The same TV licence requirement applies to anyone watching live broadcast feeds, so it sits outside either comparison as a shared fixed cost.
           </p>
           <div className={TABLE_WRAP}>
             <table className={TABLE}>
@@ -366,7 +366,7 @@ const blogContent: Record<string, BlogPostBody> = {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className={TD}>Entry-tier monthly</td><td className={TD}>£15–£18 base package</td><td className={TD}>£3.75/month on 24-month plan</td></tr>
+                <tr><td className={TD}>Entry-tier monthly</td><td className={TD}>£15–£18 base package</td><td className={TD}>£3.33/month on 24-month plan</td></tr>
                 <tr><td className={TD}>With sport + cinema add-ons</td><td className={TD}>£40–£100/month</td><td className={TD}>Included in single plan</td></tr>
                 <tr><td className={TD}>TV licence (separate)</td><td className={TD}>£180/year required for live broadcast</td><td className={TD}>Same licence requirement applies for live broadcast viewing</td></tr>
                 <tr><td className={TD}>Contract length</td><td className={TD}>12–24 month minimum, early-exit fees</td><td className={TD}>3–24 month plans, 30-day refund any plan</td></tr>
@@ -412,7 +412,7 @@ const blogContent: Record<string, BlogPostBody> = {
             Run the arithmetic over five years and the difference is stark, with one honest caveat on each side. Traditional UK pay-TV at an average of £50 a month — an entry package plus a sport add-on — comes to £3,000 over sixty months, plus five years of TV licence at £180, giving £3,900 in total.
           </p>
           <p className={P}>
-            Premium IPTV from this service at £3.75 a month, the effective rate on the 24-month plan renewed across the period, comes to £225 over sixty months, plus the same five years of TV licence at £180, giving £1,125 in total. The licence figure used here is the 2026/27 fee, which is reviewed annually and will not stay flat across the five-year period.
+            Premium IPTV from this service at £3.33 a month, the effective rate on the 24-month plan renewed across the period, comes to about £200 over sixty months, plus the same five years of TV licence at £180, giving £1,100 in total. The licence figure used here is the 2026/27 fee, which is reviewed annually and will not stay flat across the five-year period.
           </p>
           <p className={P}>
             The caveats keep this fair. The IPTV figure assumes the service stays live and the pricing holds steady across the five years, neither of which is assured for any provider. The pay-TV figure assumes the package stays at entry tier and does not creep upward with mid-contract price rises or extra add-ons, which in practice it often does. Read both as illustrative totals, not promises.

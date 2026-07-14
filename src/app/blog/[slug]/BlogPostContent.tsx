@@ -91,7 +91,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
               Ready To Start A Premium IPTV UK Subscription?
             </h3>
             <p className="text-muted mb-6">
-              Start with the premium IPTV UK service built for British viewers. Plans from £4.99/month with a 30-day money-back.
+              Start with the premium IPTV UK service built for British viewers. Plans from £4.17/month with a 30-day money-back.
             </p>
             <SectionLink
               href="/#pricing"
