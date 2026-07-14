@@ -1,0 +1,2 @@
+export const SUPPORT_WHATSAPP_NUMBER = "+44 7878 757831";
+export const SUPPORT_WHATSAPP_HREF = "https://wa.me/447878757831";
