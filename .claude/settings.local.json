@@ -15,7 +15,11 @@
       "Bash(echo \"eslint exit code: $?\")",
       "Bash(npx next *)",
       "Bash(echo \"build exit code: $?\")",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(npm run *)",
+      "Bash(awk -F: '{print $1}')",
+      "Bash(rmdir \"src/app/tutorials/[slug]\")",
+      "Bash(mkdir -p \"src/app/tutorials/[device]\")"
     ]
   }
 }

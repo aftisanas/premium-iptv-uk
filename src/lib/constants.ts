@@ -3,6 +3,24 @@ export const SITE_URL = "https://iptv-premium-uk.tv";
 export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 export const LOGO_PATH = "/premium-iptv-uk.webp";
 
+// WhatsApp checkout — digits-only form for wa.me deep links.
+// Matches SUPPORT_WHATSAPP_HREF in src/lib/whatsapp.ts (447878757831).
+export const WHATSAPP_NUMBER = "447878757831";
+
+// Checkout add-on pricing (network standard, per A3-checkout-wire).
+export const EXTRA_CONNECTION_PRICE = 7.25;
+export const EXTRA_CONNECTIONS_MAX = 4;
+
+export const CHECKOUT_COPY = {
+  extraConnectionsLabel: "Extra Connections",
+  extraConnectionsHelp:
+    "Add additional simultaneous streams beyond the 5 included with every plan.",
+  extraConnectionsPriceLabel: "per extra connection",
+  buttonLabelPrefix: "Confirm Order On WhatsApp",
+  buttonSubtitle: "Opens WhatsApp · UK support replies during peak hours",
+  footerNote: "Order details sent privately via WhatsApp",
+} as const;
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Why Us", href: "/#features" },
@@ -87,6 +105,7 @@ export const PRICING_PLANS = [
     perMonth: 8.66,
     period: "3 months",
     devices: 5,
+    proxyPrice: 4.75,
     badge: "Quick Start",
     discount: "-48%",
     accentColor: "violet",
@@ -115,6 +134,7 @@ export const PRICING_PLANS = [
     perMonth: 6.66,
     period: "6 months",
     devices: 5,
+    proxyPrice: 9.5,
     badge: "Half-Year Value",
     discount: "-43%",
     accentColor: "violet",
@@ -143,6 +163,7 @@ export const PRICING_PLANS = [
     perMonth: 4.99,
     period: "year",
     devices: 5,
+    proxyPrice: 19,
     badge: "Most Popular — Save 40%",
     discount: "-40%",
     accentColor: "blue",
@@ -171,6 +192,7 @@ export const PRICING_PLANS = [
     perMonth: 3.75,
     period: "2 years",
     devices: 5,
+    proxyPrice: 38,
     badge: "Elite — Save 55%",
     discount: "-55%",
     accentColor: "violet",
