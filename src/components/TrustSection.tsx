@@ -1,4 +1,4 @@
-import { Shield, Wifi, Lock, ServerCog } from "lucide-react";
+import { Shield, Wifi, Users, ServerCog } from "lucide-react";
 import Link from "next/link";
 import MotionReveal from "./MotionReveal";
 
@@ -16,10 +16,10 @@ const trustItems = [
       "A live status page tracks premium IPTV server performance minute by minute. If uptime dips below 99.9% in any calendar month, service credits apply automatically — transparent infrastructure separates the serious from the unreliable.",
   },
   {
-    icon: Lock,
-    title: "Built-In VPN Bundled With Every Premium IPTV Plan",
+    icon: Users,
+    title: "Five Simultaneous Streams On Every Premium IPTV Plan",
     description:
-      "The VPN encrypts every premium IPTV stream from the first press of play. No bandwidth cap, no logs, no separate subscription. Most alternatives charge extra; this service bundles it on every plan.",
+      "One premium IPTV subscription covers up to five screens at once — parents, kids and grandparents streaming in parallel without anyone fighting for the remote. Every tier carries the same five-screen cap regardless of term length.",
   },
   {
     icon: ServerCog,

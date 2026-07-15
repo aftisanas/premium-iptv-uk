@@ -108,7 +108,7 @@ export default function PricingSection() {
             <span className="gradient-text">Transparent Plans, No Hidden Fees</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            One premium IPTV UK service, four terms. Channels, 4K and VPN stay identical across every plan — the only variable is term length and savings.
+            One premium IPTV UK service, four terms. Channels, 4K and the five-screen allowance stay identical across every plan — the only variable is term length and savings.
           </p>
         </MotionReveal>
 
