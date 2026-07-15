@@ -58,7 +58,7 @@ export default function CTASection() {
             <SectionLink href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               premium IPTV plan
             </SectionLink>{" "}
-            locks the lowest rate while covering the full 37,000-channel library, 198,000 films and a built-in VPN. The first channel plays minutes after payment — backed by a{" "}
+            locks the lowest rate while covering the full 37,000-channel library, 198,000 films and 24/7 UK support. The first channel plays minutes after payment — backed by a{" "}
             <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               30-day refund
             </Link>{" "}

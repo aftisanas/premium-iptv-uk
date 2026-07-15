@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Premium IPTV UK",
   },
   description:
-    "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
+    "Premium IPTV UK subscription. 37,000+ channels, 4K UHD and 24/7 UK support — from £4.17/month with a 30-day refund.",
   keywords: [
     "premium iptv",
     "premium iptv uk",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/`,
     title: "Premium IPTV UK 2026 — 4K Subscription From £4.17/mo",
     description:
-      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD and 24/7 UK support — from £4.17/month with a 30-day refund.",
     images: [
       {
         url: LOGO_PATH,
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium IPTV UK 2026 — 4K Subscription From £4.17/mo",
     description:
-      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD, built-in VPN, 24/7 UK support — from £4.17/month with a 30-day refund.",
+      "Premium IPTV UK subscription. 37,000+ channels, 4K UHD and 24/7 UK support — from £4.17/month with a 30-day refund.",
     images: [LOGO_PATH],
   },
   robots: {
