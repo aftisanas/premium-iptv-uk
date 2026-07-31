@@ -16,6 +16,8 @@ type OrderSummaryModalProps = {
   planName: string;
   planPrice: number;
   proxyPrice: number;
+  /** Per-plan unit price for one extra connection over the full term. */
+  extraConnectionPrice?: number;
   currency?: string;
 };
 
@@ -28,6 +30,7 @@ export default function OrderSummaryModal({
   planName,
   planPrice,
   proxyPrice,
+  extraConnectionPrice = EXTRA_CONNECTION_PRICE,
   currency = "£",
 }: OrderSummaryModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -67,9 +70,10 @@ export default function OrderSummaryModal({
     proxyEnabled: proxyOn,
     proxyPrice,
     extraConnections,
+    extraConnectionPrice,
   });
 
-  const extraConnectionsSubtotal = extraConnections * EXTRA_CONNECTION_PRICE;
+  const extraConnectionsSubtotal = extraConnections * extraConnectionPrice;
 
   const handleCheckout = () => {
     const url = buildWhatsAppCheckoutUrl({
@@ -78,6 +82,7 @@ export default function OrderSummaryModal({
       proxyEnabled: proxyOn,
       proxyPrice,
       extraConnections,
+      extraConnectionPrice,
       brandName: SITE_NAME,
     });
     window.open(url, "_blank", "noopener,noreferrer");
@@ -229,13 +234,12 @@ export default function OrderSummaryModal({
               </div>
 
               <div className="mt-2 text-xs font-semibold text-accent">
-                {formatPrice(EXTRA_CONNECTION_PRICE, currency)}{" "}
-                {CHECKOUT_COPY.extraConnectionsPriceLabel}
+                {CHECKOUT_COPY.extraConnectionsPriceLabel(extraConnectionPrice)}
               </div>
 
               {extraConnections > 0 && (
                 <div className="mt-1 text-xs text-muted">
-                  {extraConnections} × {formatPrice(EXTRA_CONNECTION_PRICE, currency)} ={" "}
+                  {extraConnections} × {formatPrice(extraConnectionPrice, currency)} ={" "}
                   <span className="font-semibold text-foreground">
                     {formatPrice(extraConnectionsSubtotal, currency)}
                   </span>
