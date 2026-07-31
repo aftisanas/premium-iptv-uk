@@ -222,7 +222,7 @@ export default function IptvCostPage() {
         Pricing runs on the four-term structure set out earlier — 3, 6, 12 and 24 months — with the effective monthly rate falling from £8.66 to £3.33 as the term lengthens. Every tier carries a 30-day refund window, which is more than double the 14-day legal minimum for distance-sold digital services and applies equally whether the term chosen is the shortest or the longest.
       </p>
       <p className={pClass}>
-        A Secure Proxy is available as an optional add-on across every tier, priced by term to match the plan length: £4.75 on the 3-month plan, £9.50 on 6-month, £19 on 12-month and £38 on 24-month. It routes traffic through an encrypted connection for added privacy on shared networks — useful but not required for the service itself to work. Extra simultaneous connections beyond the number included in a plan are available at £7.25 per additional stream.
+        A Secure Proxy is available as an optional add-on across every tier, priced by term to match the plan length: £4.75 on the 3-month plan, £9.50 on 6-month, £19 on 12-month and £38 on 24-month. It routes traffic through an encrypted connection for added privacy on shared networks — useful but not required for the service itself to work. Extra simultaneous connections beyond the number included in a plan are priced by term in the same way: £7.25 on the 3-month plan, £14.50 on 6-month, £29 on 12-month and £58 on 24-month, per additional stream for the full term.
       </p>
       <p className={pClass}>
         The UK television licence obligation sits entirely outside this subscription, as it does with any IPTV service: anyone watching live broadcast feeds needs one regardless of the provider used.

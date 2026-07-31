@@ -8,6 +8,10 @@ export const LOGO_PATH = "/premium-iptv-uk.webp";
 export const WHATSAPP_NUMBER = "447878757831";
 
 // Checkout add-on pricing (network standard, per A3-checkout-wire).
+//
+// Fallback only — extra-connection pricing is per plan
+// (`PRICING_PLANS[].extraConnectionPrice`) because the add-on covers the whole
+// term. Used when no plan is in context.
 export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 4;
 
@@ -15,7 +19,8 @@ export const CHECKOUT_COPY = {
   extraConnectionsLabel: "Extra Connections",
   extraConnectionsHelp:
     "Add additional simultaneous streams beyond the 5 included with every plan.",
-  extraConnectionsPriceLabel: "per extra connection",
+  extraConnectionsPriceLabel: (price: number) =>
+    `+ £${price.toFixed(2)} per extra connection, for the full term`,
   buttonLabelPrefix: "Confirm Order On WhatsApp",
   buttonSubtitle: "Opens WhatsApp · UK support replies during peak hours",
   footerNote: "Order details sent privately via WhatsApp",
@@ -106,6 +111,7 @@ export const PRICING_PLANS = [
     period: "3 months",
     devices: 5,
     proxyPrice: 4.75,
+    extraConnectionPrice: 7.25,
     badge: "Quick Start",
     discount: "-48%",
     accentColor: "violet",
@@ -135,6 +141,7 @@ export const PRICING_PLANS = [
     period: "6 months",
     devices: 5,
     proxyPrice: 9.5,
+    extraConnectionPrice: 14.5,
     badge: "Half-Year Value",
     discount: "-43%",
     accentColor: "violet",
@@ -164,6 +171,7 @@ export const PRICING_PLANS = [
     period: "year",
     devices: 5,
     proxyPrice: 19,
+    extraConnectionPrice: 29,
     badge: "Most Popular — Save 40%",
     discount: "-40%",
     accentColor: "blue",
@@ -193,6 +201,7 @@ export const PRICING_PLANS = [
     period: "2 years",
     devices: 5,
     proxyPrice: 38,
+    extraConnectionPrice: 58,
     badge: "Elite — Save 55%",
     discount: "-55%",
     accentColor: "violet",

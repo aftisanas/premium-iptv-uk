@@ -254,7 +254,7 @@ export default function IptvPackagesPage() {
         {" "}rather than repeated here. Every tier includes the same baseline regardless of term length: live channel access, the full VOD library, EPG, a 7-day catch-up window, five simultaneous connections, and UK support reachable via WhatsApp. None of that baseline shrinks on the shorter terms — the difference between tiers is the term length and the effective monthly rate, not what is included.
       </p>
       <p className={pClass}>
-        Two paid add-ons sit outside that baseline. A Secure Proxy is available as an add-on tiered by term, priced at £4.75, £9.50, £19 and £38 across the 3, 6, 12 and 24-month plans respectively. Extra simultaneous connections beyond the five included in every plan are available at £7.25 per additional stream. Every tier carries the same 30-day refund window regardless of term length or which add-ons are chosen.
+        Two paid add-ons sit outside that baseline. A Secure Proxy is available as an add-on tiered by term, priced at £4.75, £9.50, £19 and £38 across the 3, 6, 12 and 24-month plans respectively. Extra simultaneous connections beyond the five included in every plan are priced the same way — £7.25, £14.50, £29 and £58 per additional stream on the 3, 6, 12 and 24-month plans, each covering the full term rather than a single month. Every tier carries the same 30-day refund window regardless of term length or which add-ons are chosen.
       </p>
       <p className={pClass}>
         For the current numbers behind each tier,{" "}
